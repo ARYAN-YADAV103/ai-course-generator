@@ -16,7 +16,7 @@ export function SettingsPage({ apiKey, backendStatus, onApiKeyChange, onClearDat
 
       <div className="space-y-6">
         <Card>
-          <CardHeader title="Backend" description="The frontend talks to the Flask API through the Vite proxy." action={<StatusBadge status={backendStatus} />} />
+          <CardHeader title="Backend" description="The frontend talks to the configured Flask API." action={<StatusBadge status={backendStatus} />} />
           <div className="flex items-center gap-3 p-5">
             <span className="rounded-lg bg-slate-100 p-2 text-slate-600 dark:bg-slate-800 dark:text-slate-300">
               <Server size={18} />

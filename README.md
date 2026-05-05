@@ -89,7 +89,7 @@ gunicorn server:app --bind 0.0.0.0:$PORT --timeout 120
 Health:
 
 ```bash
-curl http://127.0.0.1:5000/api/health
+curl http://127.0.0.1:5000/health
 ```
 
 Course outline:

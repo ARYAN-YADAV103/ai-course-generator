@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { apiUrl } from '../lib/api.js';
 
 export function useBackendHealth() {
   const [status, setStatus] = useState({ state: 'checking', detail: 'Checking API' });
@@ -8,7 +9,7 @@ export function useBackendHealth() {
 
     const checkBackend = async () => {
       try {
-        const response = await fetch('/api/health');
+        const response = await fetch(apiUrl('/health'));
         if (!isMounted) return;
         if (!response.ok) {
           setStatus({ state: 'error', detail: 'API unavailable' });
