@@ -1,5 +1,11 @@
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+
+function apiUrl(path) {
+  return `${API_BASE_URL}${path}`;
+}
+
 export async function generateCourseOutline(payload) {
-  const response = await fetch('/api/generate', {
+  const response = await fetch(apiUrl('/api/generate'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -20,7 +26,7 @@ export async function generateCourseOutline(payload) {
 }
 
 export async function generateLessonContent(payload) {
-  const response = await fetch('/api/lessons/generate', {
+  const response = await fetch(apiUrl('/api/lessons/generate'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
